@@ -2,7 +2,6 @@
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-dd(['Hello World!']);
-
-
-echo '<h1> Hello, World </h1>';
+$routes = require_once __DIR__. '/config/routes.php';
+$uri = $_SERVER['REQUEST_URI'];
+$routes[$uri]();
