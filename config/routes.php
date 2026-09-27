@@ -2,10 +2,10 @@
 
 return [
     '/kinopoisk-lite/home' => function () {
-        echo '<h1>Home Page</h1>';
+        include_once __DIR__. '/../views/pages/home.php';
     },
 
     '/kinopoisk-lite/movies' => function () {
-        echo '<h1>Movies page</h1>';
-    }
+        include_once __DIR__. '/../views/pages/movies.php';
+    },
 ];
