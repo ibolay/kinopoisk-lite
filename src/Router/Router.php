@@ -4,16 +4,21 @@ namespace App\Router;
 
 class Router
 {
+    public function dispatch(string $uri): void
+    {
+        $routes = $this->getRoutes();
 
-        public function dispatch(string $uri): void
-        {
-            $routes = $this -> getRoutes();
-            $routes[$uri]();
+        foreach ($routes as $route) {
+            if ($route->getUri() === $uri) {
+                $action = $route->getAction();
+                $action();
+                return;
+            }
         }
+    }
 
-        private function getRoutes(): array
-        {
-            return require_once APP_PATH . '/config/routes.php';
-        }
-
+    private function getRoutes(): array
+    {
+        return require APP_PATH . '/config/routes.php';
+    }
 }

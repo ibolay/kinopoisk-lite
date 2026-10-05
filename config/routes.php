@@ -1,11 +1,19 @@
 <?php
 
-return [
-    '/kinopoisk-lite/home' => function () {
-        include_once APP_PATH. '/views/pages/home.php';
-    },
+use App\Router\Route;
 
-    '/kinopoisk-lite/movies' => function () {
-        include_once APP_PATH. '/views/pages/movies.php';
-    },
+return [
+    Route::get(
+        uri: '/kinopoisk-lite/home',
+        action: function () {
+            include_once APP_PATH . '/views/pages/home.php';
+        }
+    ),
+
+    Route::get(
+        uri: '/kinopoisk-lite/movies',
+        action: function () {
+            include_once APP_PATH . '/views/pages/movies.php';
+        }
+    ),
 ];
