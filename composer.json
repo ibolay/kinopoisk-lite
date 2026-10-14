@@ -1,10 +1,11 @@
 {
     "autoload": {
-
-        "psr-4": {
-            "App\\": "src/"
-        }
+    "psr-4": {
+        "App\\Kernel\\": "kernel/",
+        "App\\": "src/"
+    }
     },
+
     "require": {
         "php": "^8.2"
     },
