@@ -4,17 +4,17 @@ namespace App\Kernel\Controller;
 
 use App\Kernel\View\View;
 
-abstract class Controller
+class Controller
 {
-    private View $view;
-
-    public function view(string $name): void
-    {
-        $this -> view -> page($name);
-    }
+    protected View $view;
 
     public function setView(View $view): void
     {
-        $this -> view = $view;
+        $this->view = $view;
+    }
+
+    protected function view(string $name): void
+    {
+        $this->view->page($name);
     }
 }
