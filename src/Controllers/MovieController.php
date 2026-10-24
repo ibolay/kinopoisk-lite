@@ -16,4 +16,9 @@ class MovieController extends Controller
     {
         $this -> view(name: 'admin/movies/add');
     }
+
+    public function store()
+    {
+        dd('store');
+    }
 }

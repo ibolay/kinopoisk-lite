@@ -9,7 +9,7 @@
 
 <h1>Add movie page</h1>
 
-<form action="">
+<form action="/kinopoisk-lite/admin/movies/add" method="post">
     <p>Name</p>
     <div>
         <input type="text" name="name">
