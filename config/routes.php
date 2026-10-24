@@ -16,6 +16,11 @@ return [
     ),
 
     Route::get(
+        uri: '/kinopoisk-lite/admin/movies/add',
+        action: [MovieController::class, 'add']
+    ),
+
+    Route::get(
         uri: '/kinopoisk-lite/test',
         action: function () {
             echo 'test';

@@ -11,4 +11,9 @@ class MovieController extends Controller
     {
         $this -> view(name: 'movies');
     }
+
+    public function add(): void
+    {
+        $this -> view(name: 'admin/movies/add');
+    }
 }
