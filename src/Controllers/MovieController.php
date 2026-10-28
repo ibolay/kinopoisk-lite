@@ -24,7 +24,7 @@ class MovieController extends Controller
         ]);
 
         if (! $validation) {
-             (new Redirect())->to('/admin/movies/add');
+            $this -> redirect(url:'/admin/movies/add');
             //dd('Validation failed', $this->request()->errors());
         }
 
