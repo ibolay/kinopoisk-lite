@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Kernel\Controller\Controller;
-use App\Kernel\Validator\Validator;
+use App\Kernel\Http\Redirect;
 
 class MovieController extends Controller
 {
@@ -19,12 +19,13 @@ class MovieController extends Controller
 
     public function store()
     {
-        $validation = $this -> request()-> validate([
+        $validation = $this->request()->validate([
             'name' => ['required', 'min:3', 'max:50'],
         ]);
 
-        if (! $validation){
-            dd('Validation failed', $this -> request()->errors());
+        if (! $validation) {
+             (new Redirect())->to('/admin/movies/add');
+            //dd('Validation failed', $this->request()->errors());
         }
 
         dd('Validation passed');
