@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Kernel\Controller\Controller;
-use App\Kernel\Http\Redirect;
 
 class MovieController extends Controller
 {
@@ -19,6 +18,8 @@ class MovieController extends Controller
 
     public function store()
     {
+        dd($this->session());
+
         $validation = $this->request()->validate([
             'name' => ['required', 'min:3', 'max:50'],
         ]);
