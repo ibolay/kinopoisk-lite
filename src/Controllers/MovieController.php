@@ -18,15 +18,18 @@ class MovieController extends Controller
 
     public function store()
     {
-        dd($this->session());
-
         $validation = $this->request()->validate([
             'name' => ['required', 'min:3', 'max:50'],
         ]);
 
+        if(! $validation){
+            foreach($this->request()->errors()as $field => $errors){
+                $this->session()->set($field, $errors);
+            }
+        }
+
         if (! $validation) {
             $this -> redirect(url:'/admin/movies/add');
-            //dd('Validation failed', $this->request()->errors());
         }
 
         dd('Validation passed');
