@@ -2,6 +2,7 @@
 
 namespace App\Kernel\Controller;
 
+use App\Kernel\Database\DatabaseInterface;
 use App\Kernel\Http\RedirectInterface;
 use App\Kernel\Http\RequestInterface;
 use App\Kernel\Session\SessionInterface;
@@ -19,6 +20,8 @@ abstract class Controller
     {
         $this->view->page($name);
     }
+
+    private DatabaseInterface $database;
 
     public function setView(View $view): void
     {
@@ -53,5 +56,15 @@ abstract class Controller
     public function setSession(SessionInterface $session): void
     {
         $this->session = $session;
+    }
+
+    public function db(): DatabaseInterface
+    {
+        return $this->database;
+    }
+
+    public function setDatabase(DatabaseInterface $database): void
+    {
+        $this->database = $database;
     }
 }
