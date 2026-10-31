@@ -8,7 +8,7 @@ use App\Kernel\Router\Route;
 use App\Kernel\Http\Request;
 use App\Kernel\Session\Session;
 
-class Router
+class Router implements RouterInterface
 {
 
     private array $routes = [
