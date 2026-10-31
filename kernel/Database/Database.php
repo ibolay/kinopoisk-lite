@@ -11,7 +11,7 @@ class Database implements DatabaseInterface
         $this->connect();
     }
 
-    public function insert(string $table, array $data): int|false
+    public function insert(string $table, array $data): int|false 
     {
         // TODO: Implement insert() method.
     }
