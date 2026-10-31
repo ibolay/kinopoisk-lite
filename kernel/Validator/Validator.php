@@ -38,7 +38,11 @@ class Validator implements ValidatorInterface
         return $this->errors;
     }
 
-    private function validateRule(string $key, string $ruleName, string $ruleValue = null): string|false
+    private function validateRule(
+    string $key,
+    string $ruleName,
+    ?string $ruleValue = null
+    ): string|false
     {
         $value = $this->data[$key];
 

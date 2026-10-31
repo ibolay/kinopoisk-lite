@@ -2,10 +2,10 @@
 
 return [
     'driver' => 'mysql',
-    'host' => 'database',
+    'host' => '127.0.0.1',
     'port' => 3306,
     'database' => 'lamp',
-    'username' => 'lamp',
-    'password' => 'lamp',
-    'charset' => 'utf8',
+    'username' => 'root',
+    'password' => '',
+    'charset' => 'utf8mb4',
 ];

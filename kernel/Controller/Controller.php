@@ -6,7 +6,6 @@ use App\Kernel\Database\DatabaseInterface;
 use App\Kernel\Http\RedirectInterface;
 use App\Kernel\Http\RequestInterface;
 use App\Kernel\Session\SessionInterface;
-use App\Kernel\View\View;
 use App\Kernel\View\ViewInterface;
 
 abstract class Controller
@@ -23,9 +22,9 @@ abstract class Controller
 
     private DatabaseInterface $database;
 
-    public function setView(View $view): void
+    public function setView(ViewInterface $view): void
     {
-        $this->view = $view;
+    $this->view = $view;
     }
 
     public function request(): RequestInterface

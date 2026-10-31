@@ -29,7 +29,7 @@ class MovieController extends Controller
         }
 
         if (! $validation) {
-            $this -> redirect(url:'/admin/movies/add');
+            $this->redirect(url: '/kinopoisk-lite/admin/movies/add');
         }
         
         $id = $this->db()->insert('movies', [

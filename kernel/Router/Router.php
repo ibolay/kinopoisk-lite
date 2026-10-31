@@ -81,6 +81,6 @@ class Router implements RouterInterface
      */
     private function getRoutes(): array
     {
-        return require_once APP_PATH.'/config/routes.php';
+        return require APP_PATH . '/config/routes.php';
     }
 }
