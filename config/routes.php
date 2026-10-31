@@ -2,6 +2,7 @@
 
 use App\Controllers\HomeController;
 use App\Controllers\MovieController;
+use App\Controllers\RegisterController;
 use App\Kernel\Router\Route;
 
 return [
@@ -26,9 +27,7 @@ return [
     ),
 
     Route::get(
-        uri: '/kinopoisk-lite/test',
-        action: function () {
-            echo 'test';
-        }
+        uri: '/kinopoisk-lite/register',
+        action: [RegisterController::class, 'index']
     ),
 ];
