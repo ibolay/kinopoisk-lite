@@ -30,4 +30,8 @@ return [
         uri: '/kinopoisk-lite/register',
         action: [RegisterController::class, 'index']
     ),
+    Route::post(
+    uri: '/kinopoisk-lite/register',
+    action: [RegisterController::class, 'register']
+    ),
 ];
