@@ -44,4 +44,6 @@ Route::post(
     uri: '/kinopoisk-lite/login',
     action: [LoginController::class, 'login']
 ),
+
+ Route::post('/kinopoisk-lite/logout', [LoginController::class, 'logout']),
 ];

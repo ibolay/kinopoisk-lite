@@ -24,7 +24,7 @@ class View implements ViewInterface
 
         extract($this->defaultData());
 
-        include_once $viewPath;
+        include $viewPath;
     }
 
     public function component(string $name): void
@@ -39,7 +39,7 @@ class View implements ViewInterface
 
         extract($this->defaultData());
 
-        include_once $componentPath;
+        include $componentPath;
     }
 
     private function defaultData(): array
