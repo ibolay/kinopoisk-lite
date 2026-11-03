@@ -8,7 +8,7 @@
 <?php $view->component('start') ?>
 <h1>Login</h1>
 
-<form action="/login" method="post">
+<form action="/kinopoisk-lite/login" method="post">
     <?php if ($session->has('error')) { ?>
         <p style="color: red">
             <?php echo $session->getFlash('error') ?>

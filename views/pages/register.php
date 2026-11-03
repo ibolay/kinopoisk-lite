@@ -9,7 +9,7 @@
 <?php $view->component('start') ?>
 <h1>Register</h1>
 
-<form action="/register" method="post">
+<form action="/kinopoisk-lite/register" method="post">
     <p>email</p>
     <input type="text" name="email">
     <?php if ($session->has('email')) { ?>

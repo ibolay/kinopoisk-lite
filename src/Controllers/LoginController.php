@@ -16,15 +16,18 @@ class LoginController extends Controller
         $email = $this->request()->input('email');
         $password = $this->request()->input('password');
 
-        $this->auth()->attempt($email, $password);
+        $result = $this->auth()->attempt($email, $password);
 
-        $this->redirect('/home');
+        // DEBUG
+        session_write_close();
+
+        $this->redirect('/kinopoisk-lite/home');
     }
 
     public function logout(): void
     {
         $this->auth()->logout();
-
-        $this->redirect('/login');
+        session_write_close();
+        $this->redirect('/kinopoisk-lite/login');
     }
 }

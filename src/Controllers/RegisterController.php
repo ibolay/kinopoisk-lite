@@ -22,7 +22,7 @@ class RegisterController extends Controller
                 $this->session()->set($field, $errors);
             }
 
-            $this->redirect('/register');
+            $this->redirect('/kinopoisk-lite/register');
         }
 
         $userId = $this->db()->insert('users', [
@@ -30,6 +30,6 @@ class RegisterController extends Controller
             'password' => password_hash($this->request()->input('password'), PASSWORD_DEFAULT),
         ]);
 
-        dd('User created with id: '.$userId);
+        $this->redirect('/kinopoisk-lite/login');
     }
 }
