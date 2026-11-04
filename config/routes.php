@@ -6,6 +6,7 @@ use App\Controllers\MovieController;
 use App\Controllers\RegisterController;
 use App\Kernel\Router\Route;
 use App\Middleware\AuthMiddleware;
+use App\Middleware\GuestMiddleware;
 
 return [
     Route::get(
@@ -32,17 +33,19 @@ return [
 
     Route::get(
         uri: '/kinopoisk-lite/register',
-        action: [RegisterController::class, 'index']
+        action: [RegisterController::class, 'index'],
+        middlewares: [GuestMiddleware::class]
     ),
 
     Route::post(
-    uri: '/kinopoisk-lite/register',
-    action: [RegisterController::class, 'register']
+        uri: '/kinopoisk-lite/register',
+        action: [RegisterController::class, 'register']
     ),
 
     Route::get(
-    uri: '/kinopoisk-lite/login',
-    action: [LoginController::class, 'index']
+        uri: '/kinopoisk-lite/login',
+        action: [LoginController::class, 'index'],
+        middlewares: [GuestMiddleware::class]
     ),
 
     Route::post(
