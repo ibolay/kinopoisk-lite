@@ -26,7 +26,8 @@ return [
 
     Route::post(
         uri: '/kinopoisk-lite/admin/movies/add',
-        action: [MovieController::class, 'store']
+        action: [MovieController::class, 'store'],
+        middlewares: [AuthMiddleware::class]
     ),
 
     Route::get(
