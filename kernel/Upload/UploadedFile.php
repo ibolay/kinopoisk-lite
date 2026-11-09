@@ -13,7 +13,7 @@ class UploadedFile implements UploadedFileInterface
     ) {
     }
 
-    public function move(string $path, string $fileName = null): string|false
+    public function move(string $path, ?string $fileName = null): string|false
     {
         $storagePath = APP_PATH."/storage/$path";
 

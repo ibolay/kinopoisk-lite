@@ -10,7 +10,7 @@
 
 <h1>Add movie page</h1>
 
-<form action="kinopoisk-lite/admin/movies/add" method="post" enctype="multipart/form-data">
+<form action="/kinopoisk-lite/admin/movies/add" method="post" enctype="multipart/form-data">
     <p>Name</p>
     <div>
         <input type="text" name="name">

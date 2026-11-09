@@ -39,9 +39,8 @@ class Request implements RequestInterface
         return $this->post[$key] ?? $this->get[$key] ?? $default;
     }
 
-    public function file(string $key): ?UploadedFileInterface
-    {
-        return $this->files[$key] ?? null;
+   public function file(string $key): ?UploadedFileInterface
+   {
         if (!isset($this->files[$key])) {
             return null;
         }
@@ -52,7 +51,7 @@ class Request implements RequestInterface
             tmpName: $this->files[$key]['tmp_name'],
             error: $this->files[$key]['error'],
             size: $this->files[$key]['size']
-        );
+    );
     }
 
     public function setValidator(ValidatorInterface $validator): void
