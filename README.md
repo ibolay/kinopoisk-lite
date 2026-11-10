@@ -1,10 +1,13 @@
-# Kinopoisk Lite
+# kinopoisk-lite
 
-A movie website built with PHP.
+### Creating a Storage Symlink (Linux)
 
-## Technologies
-- PHP
-- MySQL
-- HTML
-- CSS
-- JavaScript
+```shell
+ln -s $PWD/storage $PWD/public/storage
+```
+
+### Creating a Storage Symlink (Windows)
+
+```shell
+mklink /D storage public/storage
+```
