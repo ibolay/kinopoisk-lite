@@ -6,6 +6,6 @@
 
 <?php $view->component('footer'); ?>
 
-<script src="/assets/js/bootstrap.bundle.min.js"></script>
+<script src="/kinopoisk-lite/assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

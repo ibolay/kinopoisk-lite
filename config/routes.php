@@ -1,60 +1,27 @@
 <?php
 
 use App\Controllers\HomeController;
-use App\Controllers\LoginController;
-use App\Controllers\MovieController;
 use App\Controllers\RegisterController;
 use App\Kernel\Router\Route;
-use App\Middleware\AuthMiddleware;
-use App\Middleware\GuestMiddleware;
 
 return [
     Route::get(
-        uri: '/kinopoisk-lite/home',
+        uri: '/kinopoisk-lite',
         action: [HomeController::class, 'index']
     ),
 
     Route::get(
-        uri: '/kinopoisk-lite/movies',
-        action: [MovieController::class, 'index']
-    ),
-
-    Route::get(
-        uri: '/kinopoisk-lite/admin/movies/add',
-        action: [MovieController::class, 'add'],
-        middlewares: [AuthMiddleware::class]
-    ),
-
-    Route::post(
-        uri: '/kinopoisk-lite/admin/movies/add',
-        action: [MovieController::class, 'store'],
-        middlewares: [AuthMiddleware::class]
+        uri: '/kinopoisk-lite/',
+        action: [HomeController::class, 'index']
     ),
 
     Route::get(
         uri: '/kinopoisk-lite/register',
-        action: [RegisterController::class, 'index'],
-        middlewares: [GuestMiddleware::class]
+        action: [RegisterController::class, 'index']
     ),
 
     Route::post(
         uri: '/kinopoisk-lite/register',
         action: [RegisterController::class, 'register']
-    ),
-
-    Route::get(
-        uri: '/kinopoisk-lite/login',
-        action: [LoginController::class, 'index'],
-        middlewares: [GuestMiddleware::class]
-    ),
-
-    Route::post(
-        uri: '/kinopoisk-lite/login',
-        action: [LoginController::class, 'login']
-    ),
-
-    Route::post(
-        uri: '/kinopoisk-lite/logout',
-        action: [LoginController::class, 'logout']
     ),
 ];
