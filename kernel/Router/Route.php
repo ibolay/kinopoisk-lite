@@ -39,7 +39,7 @@ class Route
 
      public function hasMiddlewares(): bool
     {
-        return ! empty($this->middlewares);
+        return !empty($this->middlewares);
     }
 
     public function getMiddlewares(): array

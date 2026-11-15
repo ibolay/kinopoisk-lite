@@ -11,23 +11,25 @@ class LoginController extends Controller
         $this->view('login');
     }
 
-     public function login()
+    public function login()
     {
         $email = $this->request()->input('email');
         $password = $this->request()->input('password');
 
-        $result = $this->auth()->attempt($email, $password);
+        if ($this->auth()->attempt($email, $password)) {
+            $this->redirect('/kinopoisk-lite');
+        }
 
-        // DEBUG
-        session_write_close();
+        $this->session()->set('error', 'Неверный логин или пароль');
 
-        $this->redirect('/kinopoisk-lite/home');
+        $this->redirect('/kinopoisk-lite/login');
     }
 
     public function logout(): void
     {
         $this->auth()->logout();
         session_write_close();
+
         $this->redirect('/kinopoisk-lite/login');
     }
 }
