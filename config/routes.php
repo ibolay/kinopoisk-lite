@@ -30,9 +30,14 @@ return [
         uri: '/kinopoisk-lite/login',
         action: [LoginController::class, 'index']
     ),
-    
+
     Route::post(
         uri: '/kinopoisk-lite/login',
         action: [LoginController::class, 'login']
+    ),
+
+    Route::post(
+        uri: '/kinopoisk-lite/logout',
+        action: [LoginController::class, 'logout']
     ),
 ];
