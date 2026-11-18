@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Controllers\AdminController;
+use App\Controllers\CategoryController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\RegisterController;
@@ -39,5 +42,20 @@ return [
     Route::post(
         uri: '/kinopoisk-lite/logout',
         action: [LoginController::class, 'logout']
+    ),
+
+    Route::get(
+        uri: '/kinopoisk-lite/admin',
+        action: [AdminController::class, 'index']
+    ),
+
+    Route::get(
+        uri: '/kinopoisk-lite/admin/categories/add',
+        action: [CategoryController::class, 'create']
+    ),
+
+    Route::post(
+        uri: '/kinopoisk-lite/admin/categories/add',
+        action: [CategoryController::class, 'store']
     ),
 ];
